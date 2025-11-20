@@ -1,0 +1,18 @@
+[package]
+name = "ffmpeg-dump-jpeg"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+thiserror = "*"
+ffmpeg-next = "7.1.0"
+image = "0.25.8"
+time = { version = "0.3", features = [ "formatting" ] }
+clap = { version = "*", features = [ "derive" ] }
+anyhow = "*"
+chrono = "*"
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+rusqlite = { version = "*", features = ["bundled"] }
+toml = "*"
+md5 = "*"
