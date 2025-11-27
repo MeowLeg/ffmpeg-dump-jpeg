@@ -11,4 +11,5 @@ frame_interval_count = 120 # 相隔多少帧处理生成的一张图片
 watch_interval = 30 # 每隔多少秒检测一次
 rtmp_max_timeout = 1800 # rtmp流dump最长的持续时间
 main_cmd = "rtmp-frame" # 工程运行的命令
+max_duration = 1200 # 最长持续时间，单位：秒
 is_test = true

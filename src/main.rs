@@ -46,6 +46,7 @@ pub struct Config {
     pub watch_interval: u64,
     pub rtmp_max_timeout: u64,
     pub main_cmd: String,
+    pub max_duration: f64,
 }
 
 pub fn read_from_toml(f: &str) -> Result<Config> {

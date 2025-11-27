@@ -103,18 +103,22 @@ pub fn stream(
                     }
 
                     // 每30帧打印一次
-                    let elapsed = start_time.elapsed().as_secs_f64();
                     if cfg.is_test {
                         println!(
                             "已处理 {} 帧 | 帧率: {:.2} FPS",
                             frame_count,
-                            frame_count as f64 / elapsed
+                            frame_count as f64 / start_time.elapsed().as_secs_f64()
                         );
                     }
                     // 冲洗解码器
                     v_dctx.flush();
                 }
             }
+        }
+
+        // 避免无限运行下去
+        if start_time.elapsed().as_secs_f64() >= cfg.max_duration {
+            break;
         }
     }
 
